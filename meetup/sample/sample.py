@@ -319,12 +319,8 @@ def fetch(site, br) :
             if site == "TODAY":
                 title = str(i.find_element_by_tag_name("a").text).strip().replace("/","_")
 
-            # 금지어는 죄다 뺀다.
-            if "공지" in title or title == "" or "셀후" in title or "죶" in title or "씹" in title:
-                continue
-            if "AV" in title or "시미켄" in title or "우에하라" in title or "번호이동" in title or "sex" in title:
-                continue
-            if "빨면서" in title or "슴" in title or "섹스" in title or "백합" in title or "쎅" in title:
+            # 불건전하거나 스팸성있는 필요없는 금지어는 죄다 뺀다.
+            if "공지" in title or title == "" or "셀후" in title:
                 continue
 
             title = convert(title)
